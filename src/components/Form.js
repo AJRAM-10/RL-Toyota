@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function Form(){
+function Form( {onSellFormSubmit} ){
+
     const [ description, setDescription ] = useState("")
     const [ exterior, setExterior ] = useState("")
     const [ interior, setInterior ] = useState("")
@@ -17,24 +18,24 @@ function Form(){
     const [ image5, setImage5 ] = useState("")
     const [ price, setPrice ] = useState("")
 
-    function handleSubmit() {
+    function handleSubmit(e) {
         e.preventDefault()
         
-        if (description.length() > 0 
-        && exterior.length() > 0 
-        && interior.length() > 0 
-        && engine.length() > 0
-        && mileage.length() > 0 
-        && drivetrain.length() > 0 
-        && transmission.length() > 0 
-        && fuelEfficiency.length() > 0 
-        && type.length() > 0 
-        && image1.length() > 0
-        && image2.length() > 0 
-        && image3.length() > 0 
-        && image4.length() > 0 
-        && image5.length() > 0  
-        && price.length() > 0) {
+        if (description.length > 0 
+        && exterior.length > 0 
+        && interior.length > 0 
+        && engine.length > 0
+        && mileage.length > 0 
+        && drivetrain.length > 0 
+        && transmission.length > 0 
+        && fuelEfficiency.length > 0 
+        && type.length > 0 
+        && image1.length > 0
+        && image2.length > 0 
+        && image3.length > 0 
+        && image4.length > 0 
+        && image5.length > 0  
+        && price.length > 0) {
 
             const newCar = {
                 description: description,
@@ -62,7 +63,7 @@ function Form(){
                 },
                 body: JSON.stringify(newCar)
             })
-                .then(resp.json())
+                .then(resp => resp.json())
                 .then(newCar => onSellFormSubmit(newCar))
 
                 setDescription("")
@@ -81,10 +82,27 @@ function Form(){
                 setImage5("")
                 setPrice("")
             }
+        else {
+                setDescription("")
+                setExterior("")
+                setInterior("")
+                setEngine("")
+                setMileage("")
+                setDrivetrain("")
+                setTransmission("")
+                setFuelEfficiency("")
+                setType("")
+                setImage1("")
+                setImage2("")
+                setImage3("")
+                setImage4("")
+                setImage5("")
+                setPrice("")
+        }
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form id = "sell-car-form" onSubmit={handleSubmit}>
             <input type="text" name="description" placeholder="Car description" value={description} onChange={(e) => setDescription(e.target.value)} />
             <input type="text" name="exterior" placeholder="Exterior color" value={exterior} onChange={(e) => setExterior(e.target.value)} />
             <input type="text" name="interior" placeholder="Interior color" value={interior} onChange={(e) => setInterior(e.target.value)} />

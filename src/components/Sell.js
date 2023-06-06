@@ -3,13 +3,17 @@ import Header from "./Header"
 import Form from "./Form"
 import NavBar from "./NavBar";
 
-function Sell(){
+function Sell( {cars, setCars }){
+
+    function handleFormSubmit(newCar) {
+        setCars([...cars, newCar])
+    }
     return(
         <div>
             <Header />
             <NavBar />
             <h2>Sell Your Car</h2>
-            <Form />
+            <Form onSellFormSubmit={handleFormSubmit}/>
         </div>
     )
 }
