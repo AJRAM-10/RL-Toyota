@@ -103,21 +103,36 @@ function Form( {onSellFormSubmit} ){
 
     return(
         <form id = "sell-car-form" onSubmit={handleSubmit}>
-            <input type="text" name="description" placeholder="Car description" value={description} onChange={(e) => setDescription(e.target.value)} />
-            <input type="text" name="exterior" placeholder="Exterior color" value={exterior} onChange={(e) => setExterior(e.target.value)} />
-            <input type="text" name="interior" placeholder="Interior color" value={interior} onChange={(e) => setInterior(e.target.value)} />
-            <input type="text" name="engine" placeholder="Engine type" value={engine} onChange={(e) => setEngine(e.target.value)} />
-            <input type="text" name="mileage" placeholder="Current mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} />
-            <input type="text" name="drivetrain" placeholder="Drivetrain type" value={drivetrain} onChange={(e) => setDrivetrain(e.target.value)} />
-            <input type="text" name="transmission" placeholder="Transmission type" value={transmission} onChange={(e) => setTransmission(e.target.value)} />
-            <input type="text" name="fuelEfficiency" placeholder="Fuel efficiency" value={fuelEfficiency} onChange={(e) => setFuelEfficiency(e.target.value)} />
-            <input type="text" name="type" placeholder="Sedan/SUV/Truck" value={type} onChange={(e) => setType(e.target.value)} />
-            <input type="text" name="image1" placeholder="First image" value={image1} onChange={(e) => setImage1(e.target.value)} />
-            <input type="text" name="image2" placeholder="Second image" value={image2} onChange={(e) => setImage2(e.target.value)} />
-            <input type="text" name="image3" placeholder="Third image" value={image3} onChange={(e) => setImage3(e.target.value)} />
-            <input type="text" name="image4" placeholder="Fourth image" value={image4} onChange={(e) => setImage4(e.target.value)} />
-            <input type="text" name="image5" placeholder="Fifth image" value={image5} onChange={(e) => setImage5(e.target.value)} />
-            <input type="text" name="price" placeholder="Desired price" value={price} onChange={(e) => setPrice(e.target.value)} />
+            <label for="description">Car description: </label>
+            <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} /> <br /> 
+            <label for="exterior">Exterior color: </label>
+            <input type="text" name="exterior" value={exterior} onChange={(e) => setExterior(e.target.value)} /> <br />
+            <label for="interior">Interior color: </label>
+            <input type="text" name="interior" value={interior} onChange={(e) => setInterior(e.target.value)} /> <br />
+            <label for="engine">Engine type: </label>
+            <input type="text" name="engine" value={engine} onChange={(e) => setEngine(e.target.value)} /> <br />
+            <label for="mileage">Current mileage: </label>
+            <input type="text" name="mileage" value={mileage} onChange={(e) => setMileage(e.target.value)} /> <br />
+            <label for="drivetrain">Drivetrain type: </label>
+            <input type="text" name="drivetrain" value={drivetrain} onChange={(e) => setDrivetrain(e.target.value)} /> <br />
+            <label for="transmission">Transmission type: </label>
+            <input type="text" name="transmission" value={transmission} onChange={(e) => setTransmission(e.target.value)} /><br />
+            <label for="fuelEfficiency">Fuel efficiency: </label>
+            <input type="text" name="fuelEfficiency" value={fuelEfficiency} onChange={(e) => setFuelEfficiency(e.target.value)} /> <br />
+            <label for="type">Sedan/SUV/Truck: </label>
+            <input type="text" name="type" value={type} onChange={(e) => setType(e.target.value)} /> <br />
+            <label for="image1">First image: </label>
+            <input type="text" name="image1" value={image1} onChange={(e) => setImage1(e.target.value)} /> <br /> 
+            <label for="image2">Second image: </label>
+            <input type="text" name="image2" value={image2} onChange={(e) => setImage2(e.target.value)} /> <br />
+            <label for="image3">Third image: </label>
+            <input type="text" name="image3" value={image3} onChange={(e) => setImage3(e.target.value)} /> <br />
+            <label for="image4">Fourth image: </label>
+            <input type="text" name="image4" value={image4} onChange={(e) => setImage4(e.target.value)} /> <br /> 
+            <label for="image5">Fifth image: </label>
+            <input type="text" name="image5" value={image5} onChange={(e) => setImage5(e.target.value)} /> <br />
+            <label for="price">Desired price: </label>
+            <input type="text" name="price" value={price} onChange={(e) => setPrice(e.target.value)} /> <br />
             <button type="submit">Submit</button>
         </form>
     )
