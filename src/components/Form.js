@@ -103,7 +103,7 @@ function Form( {onSellFormSubmit} ){
     }
 
     return(
-        <form id = "sell-car-form" onSubmit={handleSubmit}>
+        <form id= "sell-car-form" onSubmit={handleSubmit}>
             <label for="description">Car description: </label>
             <input type="text" name="description" value={description} onChange={(e) => setDescription(e.target.value)} /> <br /> 
             <label for="exterior">Exterior color: </label>
