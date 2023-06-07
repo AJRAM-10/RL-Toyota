@@ -1,0 +1,24 @@
+.cards {
+    list-style: none
+}
+
+.card img {
+    width: 400px
+}
+
+.card h3 {
+    width: 400px
+}
+
+.card {
+    display: inline-grid
+}
+
+header img { 
+    width: 150px
+}
+
+header div{
+    display: inline-flex
+}
+
