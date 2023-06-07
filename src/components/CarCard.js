@@ -1,6 +1,6 @@
 import React from "react";
 
-function CarCard({car}) {
+function CarCard({ car, onCarClick }) {
 
     return (
         <li className="cards">
