@@ -1,13 +1,17 @@
 import React from "react";
 
 function CarCard({ car, onCarClick }) {
-
+    function handleClick() {
+        onCarClick(car)
+    }
     return (
         <li className="cards">
             <div>
-                <img src={car.image1} alt={car.description} className="car-img"/>
+                <img src={car.image1} alt={car.description} className="car-img" onClick={handleClick} />
                 <div className="card-content">
-                    <div className="car-name">{car.description}</div>
+                    <div className="car-name">
+                        <h3>{car.description}</h3>
+                    </div>
                     <div className="type">
                         <p>Type: {car.type}</p>
                     </div>

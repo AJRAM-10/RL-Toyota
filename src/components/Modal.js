@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
-function Modal({ car }) {
-    const [ display, setDisplay ] = useState(true)
+function Modal({ car, display, setDisplay }) {
     
-    
+    function handleClose() {
+        setDisplay(false)
+    }
+
     return(
         <div class="modal-content" style={{display: display? 'block' : 'none'}}>
             <div class="modal-header">
-                <span class="close">&times;</span>
+                <span class="close" onClick={handleClose}>&times;</span>
                 <h2>{car.description}</h2>
             </div>
             <div class="modal-body">
