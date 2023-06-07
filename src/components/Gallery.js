@@ -3,13 +3,21 @@ import { useState } from "react";
 import NavBar from "./NavBar";
 import Header from "./Header";
 import Search from "./Search";
+import CarCardList from "./CarCardList";
 
-function Gallery() {
+function Gallery({cars}) {
+    const [ search, setSearch ] = useState("")
+
+    const findCars = cars.filter((car) => {
+        return car.description.toLowerCase().includes(search.toLowerCase()) || car.type.toLowerCase().includes(search.toLowerCase())
+    })
+
     return(
         <div className="gallery">
             <Header />
             <NavBar />
-            <Search />
+            <Search setSearch={setSearch} />
+            <CarCardList cars={findCars}/>
         </div>
     )
 }
