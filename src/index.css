@@ -1,5 +1,6 @@
 .cards {
     list-style: none;
+    width: fit-content;
 }
 
 .card img {
@@ -12,6 +13,7 @@
 
 .card {
     display: inline-grid;
+    margin-left: 40px;
 }
 
 header img { 
@@ -179,4 +181,17 @@ nav span {
     color: grey;
     text-decoration: none;
     cursor: pointer;
+}
+
+.search {
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #014e9c;
+}
+
+.search h4 {
+    width: fit-content;
+    margin: auto;
+    color: white;
 }
