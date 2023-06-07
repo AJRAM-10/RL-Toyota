@@ -98,6 +98,7 @@ function Form( {onSellFormSubmit} ){
                 setImage4("")
                 setImage5("")
                 setPrice("")
+                alert("Incomplete Form")
         }
     }
 
