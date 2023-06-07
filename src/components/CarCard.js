@@ -17,7 +17,7 @@ function CarCard({ car, onCarClick }) {
                         <p>Type: {car.type}</p>
                     </div>
                     <div className="color">
-                        <p >Color: {car.exterior}</p>
+                        <p >Exterior: {car.exterior}</p>
                     </div>
                     <div className="interior">
                         <p>Interior: {car.interior}</p>

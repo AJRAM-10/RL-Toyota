@@ -10,10 +10,12 @@ function Gallery({cars}) {
     const [ search, setSearch ] = useState("")
     const [ car, setCar ] = useState(cars[0])
     const [ display, setDisplay ] = useState(false)
+    const [ blurred, setBlurred ] = useState(false)
 
     function handleCarClick(car) {
         setCar(car)
         setDisplay(true)
+        setBlurred(true)
     }
 
     const findCars = cars.filter((car) => {
@@ -25,8 +27,8 @@ function Gallery({cars}) {
             <Header />
             <NavBar />
             <Search setSearch={setSearch} />
-            <Modal car={car} display={display} setDisplay={setDisplay} />
-            <CarCardList cars={findCars} onCarClick={handleCarClick} />
+            <Modal car={car} display={display} setDisplay={setDisplay} setBlurred={setBlurred} />
+            <CarCardList cars={findCars} blurred={blurred} onCarClick={handleCarClick} />
         </div>
     )
 }
