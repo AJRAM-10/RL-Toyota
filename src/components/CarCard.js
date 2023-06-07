@@ -3,9 +3,10 @@ import React from "react";
 function CarCard({ car, onCarClick }) {
     function handleClick() {
         onCarClick(car)
+        document.documentElement.scrollTop = 0
     }
     return (
-        <li className="cards">
+        <li className="card">
             <div>
                 <img src={car.image1} alt={car.description} className="car-img" onClick={handleClick} />
                 <div className="card-content">

@@ -1,7 +1,7 @@
 import React from "react";
 import CarCard from "./CarCard";
 
-function CarCardList({ cars, onCarClick }){
+function CarCardList({ cars, onCarClick }) {
 
     const cards = cars.map((car) => {
         return (
@@ -10,7 +10,9 @@ function CarCardList({ cars, onCarClick }){
     })
 
     return (
-        <>{cards}</>
+        <ul className= "cards">
+            {cards}
+        </ul> 
     )
 }
 
