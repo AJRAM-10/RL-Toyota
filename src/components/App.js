@@ -20,9 +20,6 @@ function App() {
 
   if (cars.length > 0) {
   return (
-    // <div className="App">
-    //   <Header />
-    // </div>
     <Routes>
       <Route path = '/' element = { <Home cars={cars} /> } />
       <Route path = '/gallery' element = { <Gallery cars={cars} setCars={setCars} /> } />
