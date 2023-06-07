@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-function Modal({ car, display, setDisplay }) {
+function Modal({ car, display, setDisplay, setBlurred }) {
     
     function handleClose() {
         setDisplay(false)
+        setBlurred(false)
     }
 
     return(
@@ -13,10 +14,10 @@ function Modal({ car, display, setDisplay }) {
                 <h2>{car.description}</h2>
             </div>
             <div class="modal-body">
-                <div className="card-content">
-                    <img src={car.image1} alt={car.description} className="car-img"/>
-                    <div className="car-details">
-                            <ul className="details-list">
+                <div className="modal-card-content">
+                    <img src={car.image1} alt={car.description} className="modal-car-img"/>
+                    <div className="modal-car-details">
+                            <ul className="modal-details-list">
                                 <li>Exterior: {car.exterior}</li>
                                 <li>Interior: {car.interior}</li>
                                 <li>Engine: {car.engine}</li>

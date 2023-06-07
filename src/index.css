@@ -1,24 +1,197 @@
 .cards {
-    list-style: none
+    list-style: none;
+    width: fit-content;
 }
 
 .card img {
-    width: 400px
+    width: 400px;
 }
 
 .card h3 {
-    width: 400px
+    width: 400px;
 }
 
 .card {
-    display: inline-grid
+    display: inline-grid;
+    margin-left: 40px;
 }
 
 header img { 
-    width: 150px
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 100px;
 }
 
 header div{
-    display: inline-flex
+    display: inline-flex;
+    width: auto;
 }
 
+header h1 {
+    color: white;
+    margin: auto;
+    margin-left: 50px;
+}
+
+header {
+    background-color: #014e9c;
+    width: auto;
+}
+
+nav {
+    background-color: grey;
+    display: flex;
+}
+
+nav span {
+    display: inline-flex;
+    color: white;
+}
+
+.home-link {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-left: 50px;
+}
+
+.gallery-link {
+    margin-left: 400px;
+}
+
+.sell-link {
+    margin-left: 400px;
+}
+
+.home-car {
+    background-color: grey;
+    width: fit-content;
+    height: 800px;
+    margin: auto;
+}
+
+.home-car-img {
+    width: 700px;
+    margin: auto;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.home-car-content h3 {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    color: white;
+}
+
+.home-car-details {
+    list-style: none;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 250px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 20px;
+    color: white;
+}
+
+.home-car h3 {
+    width: fit-content;
+    margin: auto;
+    color: white;
+}
+
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #014e9c;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+    width: 1000px;
+}
+  
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #014e9c;
+    color: white;
+}
+
+.modal-footer h4 {
+    margin-left: 900px;
+}
+  
+.modal-content {
+    position: relative;
+    background-color: grey;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.model-car-content {
+    margin: auto;
+    width: fit-content;
+}
+
+.modal-car-img {
+    width: 700px;
+    margin-top: 20px;
+    margin-left: 155px;
+}
+
+.modal-details-list {
+    list-style: none;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 250px;
+    margin: auto;
+    width: fit-content;
+    margin-top: 20px;
+    color: white;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.search {
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+    background-color: #014e9c;
+}
+
+.search h4 {
+    width: fit-content;
+    margin: auto;
+    color: white;
+}
