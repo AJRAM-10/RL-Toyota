@@ -5,12 +5,14 @@ import Header from "./Header";
 import Search from "./Search";
 import CarCardList from "./CarCardList";
 import Modal from "./Modal";
+import BuyModal from "./BuyModal";
 
 function Gallery({cars}) {
     const [ search, setSearch ] = useState("")
     const [ car, setCar ] = useState(cars[0])
     const [ display, setDisplay ] = useState(false)
     const [ blurred, setBlurred ] = useState(false)
+    const [ buyDisplay, setBuyDisplay ] = useState(false)
 
     function handleCarClick(car) {
         setCar(car)
@@ -27,7 +29,10 @@ function Gallery({cars}) {
             <Header />
             <NavBar />
             <Search setSearch={setSearch} />
-            <Modal car={car} display={display} setDisplay={setDisplay} setBlurred={setBlurred} />
+            <div className="modals">
+            <Modal car={car} display={display} setBuyDisplay={setBuyDisplay} setDisplay={setDisplay} setBlurred={setBlurred} />
+            <BuyModal car={car} buyDisplay={buyDisplay} setBuyDisplay={setBuyDisplay} />
+            </div>
             <CarCardList cars={findCars} blurred={blurred} onCarClick={handleCarClick} />
         </div>
     )

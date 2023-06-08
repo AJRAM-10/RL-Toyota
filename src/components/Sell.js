@@ -12,8 +12,10 @@ function Sell( {cars, setCars} ) {
         <div>
             <Header />
             <NavBar />
+            <div className="sell">
             <h2>Sell Your Car</h2>
             <Form onSellFormSubmit={handleFormSubmit}/>
+            </div>
         </div>
     )
 }
