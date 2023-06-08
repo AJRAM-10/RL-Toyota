@@ -105,6 +105,13 @@ nav span {
     color: white;
 }
 
+.home h4 {
+    width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: #014e9c;
+}
 
 .modal-header {
     padding: 2px 16px;
@@ -116,15 +123,22 @@ nav span {
     padding: 2px 16px;
     width: 1000px;
 }
+
+.like {
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+}
   
 .modal-footer {
     padding: 2px 16px;
     background-color: #014e9c;
     color: white;
+    display: flex;
 }
 
 .modal-footer h4 {
-    margin-left: 900px;
+    margin-left: 800px;
 }
   
 .modal-content {
@@ -137,6 +151,32 @@ nav span {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     animation-name: animatetop;
     animation-duration: 0.4s
+}
+
+.buy-modal-content {
+    position: relative;
+    background-color: grey;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.buy-form {
+    color: white;
+    width: 250px;
+}
+
+.buy-form input {
+    margin-top: 20px;
+}
+
+.buy-form button {
+    margin-top: 20px;
+    margin-left: 100px;
 }
 
 .model-car-content {
@@ -169,6 +209,11 @@ nav span {
     to {top: 0; opacity: 1}
 }
 
+.buy-request {
+    margin-top: 20px;
+    height: 20px;
+}
+
 .close {
     color: white;
     float: right;
@@ -183,6 +228,34 @@ nav span {
     cursor: pointer;
 }
 
+.buy-modal-header {
+    padding: 2px 16px;
+    background-color: #014e9c;
+    color: white;
+}
+
+.buy-close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.buy-close:hover,
+.buy-close:focus {
+    color: grey;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modals {
+    display: flex;
+}
+
+.buy-modal-content {
+    width: fit-content
+}
+
 .search {
     width: fit-content;
     margin: auto;
@@ -194,4 +267,31 @@ nav span {
     width: fit-content;
     margin: auto;
     color: white;
+}
+
+.sell {
+    background-color: #888;
+    width: 700px;
+    margin: auto;
+    margin-top: 100px;
+    height: 500px;
+}
+
+.sell h2 {
+    color: white;
+    width: fit-content;
+    margin: auto;
+}
+
+#sell-car-form {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 200px;
+    width: 500px;
+    margin: auto;
+    color: white;
+    margin-top: 100px;
 }

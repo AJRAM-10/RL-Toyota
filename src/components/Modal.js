@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Modal({ car, display, setDisplay, setBlurred }) {
+function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
     
     function handleClose() {
         setDisplay(false)
         setBlurred(false)
+    }
+
+    function handleBuy() {
+        setBuyDisplay(true)
+    }
+
+    function handleLike() {
+        
     }
 
     return(
@@ -12,6 +20,7 @@ function Modal({ car, display, setDisplay, setBlurred }) {
             <div class="modal-header">
                 <span class="close" onClick={handleClose}>&times;</span>
                 <h2>{car.description}</h2>
+                <p className="like" onClick={handleLike}>❤️</p>
             </div>
             <div class="modal-body">
                 <div className="modal-card-content">
@@ -30,6 +39,7 @@ function Modal({ car, display, setDisplay, setBlurred }) {
                 </div>
             </div>
             <div class="modal-footer">
+                <button className="buy-request" onClick={handleBuy}>Request Purchase</button>
                 <h4>Price: {car.price}</h4>
             </div>
         </div>

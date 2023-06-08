@@ -12,10 +12,6 @@ function Form( {onSellFormSubmit} ){
     const [ fuelEfficiency, setFuelEfficiency ] = useState("")
     const [ type, setType ] = useState("")
     const [ image1, setImage1 ] = useState("")
-    const [ image2, setImage2 ] = useState("")
-    const [ image3, setImage3 ] = useState("")
-    const [ image4, setImage4 ] = useState("")
-    const [ image5, setImage5 ] = useState("")
     const [ price, setPrice ] = useState("")
 
     function handleSubmit(e) {
@@ -31,10 +27,6 @@ function Form( {onSellFormSubmit} ){
         && fuelEfficiency.length > 0 
         && type.length > 0 
         && image1.length > 0
-        && image2.length > 0 
-        && image3.length > 0 
-        && image4.length > 0 
-        && image5.length > 0  
         && price.length > 0) {
 
             const newCar = {
@@ -48,11 +40,7 @@ function Form( {onSellFormSubmit} ){
                 fuelEfficiency: fuelEfficiency,
                 type: type,
                 image1: image1,
-                image2: image2,
-                image3: image3,
-                image4: image4,
-                image5: image5,
-                price: price
+                price: (parseInt(price.replaceAll(',','')) + 2000).toLocaleString("en-US")
             }
 
             fetch("http://localhost:3000/cars", {
@@ -76,10 +64,6 @@ function Form( {onSellFormSubmit} ){
                 setFuelEfficiency("")
                 setType("")
                 setImage1("")
-                setImage2("")
-                setImage3("")
-                setImage4("")
-                setImage5("")
                 setPrice("")
             }
         else {
@@ -93,10 +77,6 @@ function Form( {onSellFormSubmit} ){
                 setFuelEfficiency("")
                 setType("")
                 setImage1("")
-                setImage2("")
-                setImage3("")
-                setImage4("")
-                setImage5("")
                 setPrice("")
                 alert("Incomplete Form")
         }
@@ -122,16 +102,8 @@ function Form( {onSellFormSubmit} ){
             <input type="text" name="fuelEfficiency" value={fuelEfficiency} onChange={(e) => setFuelEfficiency(e.target.value)} /> <br />
             <label for="type">Sedan/SUV/Truck: </label>
             <input type="text" name="type" value={type} onChange={(e) => setType(e.target.value)} /> <br />
-            <label for="image1">First image: </label>
+            <label for="image1">Image: </label>
             <input type="text" name="image1" value={image1} onChange={(e) => setImage1(e.target.value)} /> <br /> 
-            <label for="image2">Second image: </label>
-            <input type="text" name="image2" value={image2} onChange={(e) => setImage2(e.target.value)} /> <br />
-            <label for="image3">Third image: </label>
-            <input type="text" name="image3" value={image3} onChange={(e) => setImage3(e.target.value)} /> <br />
-            <label for="image4">Fourth image: </label>
-            <input type="text" name="image4" value={image4} onChange={(e) => setImage4(e.target.value)} /> <br /> 
-            <label for="image5">Fifth image: </label>
-            <input type="text" name="image5" value={image5} onChange={(e) => setImage5(e.target.value)} /> <br />
             <label for="price">Desired price: </label>
             <input type="text" name="price" value={price} onChange={(e) => setPrice(e.target.value)} /> <br />
             <button type="submit">Submit</button>
