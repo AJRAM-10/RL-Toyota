@@ -1,7 +1,16 @@
+import { click } from "@testing-library/user-event/dist/click";
+import { useState, useEffect } from "react"
 import React from "react";
 
 function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
-    
+    const [ likes, setLikes ] = useState(car.likes)
+
+    console.log(car.likes)
+
+    useEffect(()=>{
+        setLikes(car.likes)
+    }, [car])
+
     function handleClose() {
         setDisplay(false)
         setBlurred(false)
@@ -11,16 +20,29 @@ function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
         setBuyDisplay(true)
     }
 
-    function handleLike() {
+    function handleLike(id, e ) {
+        e.preventDefault();
 
+
+        fetch(`http://localhost:3000/cars/${id}`, {
+            method: "PATCH",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({likes: likes +1 })
+        })
+        .then(resp => resp.json())
+        .then((patchedCar) => setLikes(patchedCar.likes))
     }
+     
 
     return(
         <div class="modal-content" style={{display: display? 'block' : 'none'}}>
             <div class="modal-header">
                 <span class="close" onClick={handleClose}>&times;</span>
                 <h2>{car.description}</h2>
-                <p className="like" onClick={handleLike}>❤️</p>
+                <p className="like" onClick={(e) => handleLike( car.id, e)}>❤️ Likes: {likes}</p>
             </div>
             <div class="modal-body">
                 <div className="modal-card-content">
