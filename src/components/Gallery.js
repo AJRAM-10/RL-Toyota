@@ -7,7 +7,7 @@ import CarCardList from "./CarCardList";
 import Modal from "./Modal";
 import BuyModal from "./BuyModal";
 
-function Gallery({cars}) {
+function Gallery({ cars, fetchData }) {
     const [ search, setSearch ] = useState("")
     const [ car, setCar ] = useState(cars[0])
     const [ display, setDisplay ] = useState(false)
@@ -30,7 +30,7 @@ function Gallery({cars}) {
             <NavBar />
             <Search setSearch={setSearch} />
             <div className="modals">
-            <Modal car={car} display={display} setBuyDisplay={setBuyDisplay} setDisplay={setDisplay} setBlurred={setBlurred} />
+            <Modal car={car} display={display} setBuyDisplay={setBuyDisplay} setDisplay={setDisplay} setBlurred={setBlurred} fetchData={fetchData} />
             <BuyModal car={car} buyDisplay={buyDisplay} setBuyDisplay={setBuyDisplay} />
             </div>
             <CarCardList cars={findCars} blurred={blurred} onCarClick={handleCarClick} />

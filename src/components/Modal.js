@@ -1,11 +1,10 @@
-import { click } from "@testing-library/user-event/dist/click";
 import { useState, useEffect } from "react"
 import React from "react";
 
-function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
+function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay, fetchData }) {
     const [ likes, setLikes ] = useState(car.likes)
 
-    console.log(car.likes)
+    console.log(car)
 
     useEffect(()=>{
         setLikes(car.likes)
@@ -23,28 +22,31 @@ function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
     function handleLike(id, e ) {
         e.preventDefault();
 
-
         fetch(`http://localhost:3000/cars/${id}`, {
             method: "PATCH",
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({likes: likes +1 })
+            body: JSON.stringify({likes: likes + 1})
         })
         .then(resp => resp.json())
-        .then((patchedCar) => setLikes(patchedCar.likes))
+        .then((patchedCar) => {
+            setLikes(patchedCar.likes)
+            fetchData()
+        })
+        
     }
      
 
     return(
-        <div class="modal-content" style={{display: display? 'block' : 'none'}}>
-            <div class="modal-header">
-                <span class="close" onClick={handleClose}>&times;</span>
+        <div className="modal-content" style={{display: display? 'block' : 'none'}}>
+            <div className="modal-header">
+                <span className="close" onClick={handleClose}>&times;</span>
                 <h2>{car.description}</h2>
                 <p className="like" onClick={(e) => handleLike( car.id, e)}>❤️ Likes: {likes}</p>
             </div>
-            <div class="modal-body">
+            <div className="modal-body">
                 <div className="modal-card-content">
                     <img src={car.image1} alt={car.description} className="modal-car-img"/>
                     <div className="modal-car-details">
@@ -60,7 +62,7 @@ function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
                 <button className="buy-request" onClick={handleBuy}>Request Purchase</button>
                 <h4>Price: {car.price}</h4>
             </div>

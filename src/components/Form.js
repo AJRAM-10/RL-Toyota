@@ -39,6 +39,7 @@ function Form( {onSellFormSubmit} ){
                 transmission: transmission,
                 fuelEfficiency: fuelEfficiency,
                 type: type,
+                likes: 0,
                 image1: image1,
                 price: (parseInt(price.replaceAll(',','')) + 2000).toLocaleString("en-US")
             }
