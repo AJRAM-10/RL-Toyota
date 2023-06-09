@@ -4,8 +4,6 @@ import React from "react";
 function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay, fetchData }) {
     const [ likes, setLikes ] = useState(car.likes)
 
-    console.log(car)
-
     useEffect(()=>{
         setLikes(car.likes)
     }, [car])
