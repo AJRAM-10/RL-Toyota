@@ -12,7 +12,7 @@ function Modal({ car, display, setDisplay, setBlurred, setBuyDisplay }) {
     }
 
     function handleLike() {
-        
+
     }
 
     return(

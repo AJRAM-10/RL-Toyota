@@ -3,7 +3,7 @@ import React from "react";
 function CarCard({ car, onCarClick }) {
     function handleClick() {
         onCarClick(car)
-        document.documentElement.scrollTop = 120
+        document.documentElement.scrollTop = 200
     }
     return (
         <li className="card">
