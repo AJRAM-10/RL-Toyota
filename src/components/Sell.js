@@ -8,6 +8,7 @@ function Sell( {cars, setCars} ) {
     function handleFormSubmit(newCar) {
         setCars([...cars, newCar])
     }
+    
     return(
         <div>
             <Header />
