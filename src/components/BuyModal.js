@@ -36,29 +36,29 @@ function BuyModal({ car,buyDisplay, setBuyDisplay }) {
     }
 
     return(
-        <div class="buy-modal-content" style={{display: buyDisplay? 'block' : 'none'}}>
-            <div class="buy-modal-header">
-                <span class="buy-close" onClick={handleClose}>&times;</span>
+        <div className="buy-modal-content" style={{display: buyDisplay? 'block' : 'none'}}>
+            <div className="buy-modal-header">
+                <span className="buy-close" onClick={handleClose}>&times;</span>
                 <h2>Please Fill Out The Request Form Below</h2>
             </div>
-            <div class="buy-modal-body">
+            <div className="buy-modal-body">
                 <div className="buy-modal-content">
                     <div className="buy-form">
                     <form id= "buy-car-form" onSubmit={handleSubmit}>
-                    <label for="name">Your name: </label>
+                    <label>Your name: </label>
                     <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)}/> <br /> 
-                    <label for="address">Your address: </label>
+                    <label>Your address: </label>
                     <input type="text" name="address" value={address} onChange={(e) => setAddress(e.target.value)} /> <br />
-                    <label for="number">Your number: </label>
+                    <label>Your number: </label>
                     <input type="text" name="number" value={number} onChange={(e) => setNumber(e.target.value)} /> <br />
-                    <label for="offer">Your offer: </label>
+                    <label>Your offer: </label>
                     <input type="text" name="offer" value={offer} onChange={(e) => setOffer(e.target.value)} /> <br />
                     <button type="submit">Submit</button>
                     </form>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
+            <div className="modal-footer">
             <div className="message">
                 {message}
             </div>
